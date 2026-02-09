@@ -50,13 +50,13 @@ const tarot = [
   { name: "星", meaning: "希望。可能性。チャンス。" },
   { name: "月", meaning: "不安。迷い。" },
   { name: "太陽", meaning: "成功。活力。情熱。" },
-  { name: "審判", meaning: "復活。目覚め。良き転機" },
-  { name: "世界", meaning: "完全。達成。解放"},
+  { name: "審判", meaning: "復活。目覚め。良き転機。" },
+  { name: "世界", meaning: "完全。達成。解放。"},
 ];
 
 btn.addEventListener("click", () => {
   const userName = nameInput.value;
-  if (!userName) return alert("名前を入力してください！");
+  if (!userName) return alert("名前を入力してください");
 
   const i = Math.floor(Math.random() * tarot.length);
 
