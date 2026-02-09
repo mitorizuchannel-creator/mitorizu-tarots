@@ -1,0 +1,110 @@
+#cardContainer {
+  perspective: 1000px;
+  width: 150px;
+  height: 220px;
+  margin: 20px auto;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 2s ease-in-out; /* シャッフル完了までの時間 */
+}
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border: 2px solid #333;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  background-color: white;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+/* シャッフル中に少し小刻みに回転させる */
+.shuffle {
+  animation: shuffleAnim 2s ease-in-out;
+}
+
+@keyframes shuffleAnim {
+  0%   { transform: rotateY(0deg) rotateX(0deg); }
+  20%  { transform: rotateY(90deg) rotateX(20deg); }
+  40%  { transform: rotateY(180deg) rotateX(-20deg); }
+  60%  { transform: rotateY(270deg) rotateX(10deg); }
+  80%  { transform: rotateY(360deg) rotateX(-10deg); }
+  100% { transform: rotateY(720deg) rotateX(0deg); } /* 最終的に裏面 */
+}
+/* 全体を縦横中央に */
+#container {
+  display: flex;
+  flex-direction: column; /* 上から下に並べる */
+  justify-content: center; /* 縦方向中央 */
+  align-items: center;     /* 横方向中央 */
+  height: 100vh;           /* 画面全体の高さ */
+  text-align: center;      /* テキストも中央 */
+  gap: 20px;               /* 上下の間隔 */
+}
+
+/* 入力欄とボタンの幅を整える */
+#nameInput {
+  padding: 5px 10px;
+  font-size: 1rem;
+}
+
+#fortuneBtn {
+  padding: 5px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* カードはそのまま */
+#cardContainer {
+  perspective: 1000px;
+  width: 150px;
+  height: 220px;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 2s ease-in-out;
+}
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border: 2px solid #333;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  background-color: white;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+/* 結果も中央 */
+#result {
+  font-size: 1.2rem;
+}
+#title {
+  font-size: 2rem; /* タイトルを大きく */
+  margin: 0;       /* 上下余白をリセット */
+}
