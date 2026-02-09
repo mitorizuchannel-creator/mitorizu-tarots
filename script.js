@@ -63,15 +63,13 @@ btn.addEventListener("click", () => {
   back.textContent = tarot[i].name;
   result.textContent = "";
 
-  // シャッフルアニメ開始
   cardElement.classList.add("shuffle");
 
-  // アニメ終了後に裏面で止めて意味表示
   setTimeout(() => {
     cardElement.classList.remove("shuffle");
-    cardElement.style.transform = "rotateY(180deg)"; // 裏面で止める
+    cardElement.style.transform = "rotateY(180deg)"; 
     result.textContent = tarot[i].meaning;
-  }, 2000); // CSSアニメと同じ時間
+  }, 2000); 
 });
 
 
